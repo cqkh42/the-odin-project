@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>etch-a-sketch</title>
+    <link rel="shortcut icon" href="imgs/avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <nav>
+      <div id="size">
+        <input type="number" class="draw" id="num-cols" value="8" name="num-cols" min="1" max="264">
+        <span>x</span>
+        <input type="number" class="draw" id="num-rows" name="num-rows" value="8" min="1" max="264">
+      </div>
+    <div class="colors">
+      <div class="swatch" id="white"></div>
+      <div class="swatch selected-color" id="black"></div>
+      <div class="swatch" id='multi'></div>
+    </div>
+    <button id="clear" class="draw">Clear</button>
+
+    </nav>
+    <div class="container"></div>
+  </body>
+  <script src="js/master.js" charset="utf-8"></script>
+</html>
