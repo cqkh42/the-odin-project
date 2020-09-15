@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="shortcut icon" href="imgs/avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
+
+    <link rel="stylesheet" href="master.css">
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body class="flex-col">
+    <div class="bar">
+      <span>Player</span>
+      <span id="player-score" style="float: right;">0</span>
+      <div class="choices" data-player=user>
+      <div class="choice flex-col" data-key=1>
+        <img width=100 class="rotate" src="https://img.icons8.com/ios/100/000000/hand-rock.png"/>
+        <span>Rock</span>
+      </div>
+      <div class="choice selected flex-col" data-key=2>
+        <img width=100 class="rotate" src="https://img.icons8.com/ios/100/000000/hand.png"/>
+        <span>Paper</span>
+      </div>
+      <div class="choice flex-col" data-key=3>
+        <img width=100 src="https://img.icons8.com/ios/100/000000/hand-scissors.png"/>
+        <span>Scissors</span>
+      </div>
+    </div>
+    </div>
+    <button type="button" name="play">Play</button>
+    <div class="bar">
+    <div class="choices" data-player="computer">
+      <div class="choice flex-col" data-key=1>
+        <img width=100 class="rotate" src="https://img.icons8.com/ios/100/000000/hand-rock.png"/>
+        <span>Rock</span>
+      </div>
+      <div class="choice flex-col" data-key=2>
+        <img width=100 class="rotate" src="https://img.icons8.com/ios/100/000000/hand.png"/>
+        <span>Paper</span>
+      </div>
+      <div class="choice flex-col" data-key=3>
+        <img width=100 src="https://img.icons8.com/ios/100/000000/hand-scissors.png"/>
+        <span>Scissors</span>
+      </div>
+    </div>
+    <span>Computer</span><span id="computer-score" style="float: right;">0</span>
+
+  </div>
+    </div>
+
+    <script type="text/javascript" src="js/master.js" charset="utf-8"></script>
+
+  </body>
+
+</html>
