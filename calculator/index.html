@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+    <link rel="shortcut icon" href="imgs/avatar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css">
+  </head>
+  <body>
+    <div id="container">
+      <button type="number" data-num="1" style="grid-area: one">1</button>
+      <button type="number" data-num="2" style="grid-area: two">2</button>
+      <button type="number" data-num="3" style="grid-area: three">3</button>
+      <button type="number" data-num="4" style="grid-area: four">4</button>
+      <button type="number" data-num="5" style="grid-area: five">5</button>
+      <button type="number" data-num="6" style="grid-area: six">6</button>
+      <button type="number" data-num="7" style="grid-area: seven">7</button>
+      <button type="number" data-num="8" style="grid-area: eight">8</button>
+      <button type="number" data-num="9" style="grid-area: nine">9</button>
+      <button type="number" data-num="0" style="grid-area: zero">0</button>
+      <button type="number" data-num="." style="grid-area: dot">.</button>
+      <button type="func" name="add" data-operator="+" style="grid-area: plus">&#43</button>
+      <button type="func" name="subtract" data-operator="-" style="grid-area: minus">&#x2212</button>
+      <button type="func" name="divide" data-operator="/" style="grid-area: divide">&#247</button>
+      <button type="func" name="multiply" data-operator="*" style="grid-area: multiply">&#215</button>
+      <button type="equals" name="equals" style="grid-area: equals">=</button>
+      <button type="ac" name="ac" style="grid-area: ac">AC</button>
+      <span id="screen" style="grid-area: screen">0</span>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/master.js" charset="utf-8"></script>
+</html>

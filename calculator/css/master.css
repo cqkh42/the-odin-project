@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.decimal::after {
+  content: '.'
+}
+
+#container {
+  display: grid;
+  grid-template-areas:
+   "screen screen screen screen"
+   "equals equals dot ac"
+   "seven eight nine divide"
+    "four five six multiply"
+   "one two three minus"
+   "zero zero zero plus";
+   margin: 2rem 8rem;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   padding: 1rem;
+}
+
+button{
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  background-color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+
+button {
+  margin: 0.3rem;
+  /* color:  */
+  background-color: #f4f4f4;
+}
+
+span {
+  font-size: 4rem;
+  text-align: right;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
