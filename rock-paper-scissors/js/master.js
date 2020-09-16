@@ -1,53 +1,50 @@
-function chooseComputer() {
-  const choices = document.querySelectorAll('div[data-player="computer"] > div')
-  let index = Math.floor(Math.random() * choices.length);
-  return choices[index];
-}
 const playButton = document.querySelector('button[name="play"]')
-// const playerChoices = document.querySelectorAll(".user > div")
-const playerChoices = document.querySelectorAll('div[data-player="user"] > div')
+const playerChoices = document.querySelectorAll('.clickable')
 
-let playerChoice = document.querySelector(".selected")
-const allChoices = document.querySelectorAll(".choice")
+let playerKey = 0
 
-let playerScore = document.querySelector("#player-score")
-let computerScore = document.querySelector("#computer-score")
+function playerWins(playerKey, computerKey) {
+  return (computerKey - playerKey) % 3 == 2
+}
 
-function clearState(){
-  allChoices.forEach(item => item.classList.remove("win", "lose", "draw"));
+function setWinLose(player, computer){
+  let [win, lose] = playerWins(player, computer) ? [player, computer] : [computer, player]
+  document.querySelector(`div[data-key="${win}"]`).classList.add('win')
+  document.querySelector(`div[data-key="${lose}"]`).classList.add('lose')
 }
 
 function playRound() {
-  clearState()
-  let computerChoice = chooseComputer()
-  const playerKey = playerChoice.dataset.key
-  const computerKey = computerChoice.dataset.key
+  playButton.disabled = true
+  playerChoices.forEach(item => item.classList.remove('clickable'))
+  let computerKey = Math.floor(Math.random() * 3) + 3
 
-  if (playerKey == computerKey) {
-    computerChoice.classList.add("draw")
-  } else if ((playerKey + 1) % 3 == computerKey % 3) {
-      ++computerScore.innerText
-      computerChoice.classList.add("win")
-      playerChoice.classList.add("lose")
-  } else if ((computerKey + 1) % 3 == playerKey % 3) {
-      ++playerScore.innerText
-      playerChoice.classList.add("win")
-      computerChoice.classList.add("lose")
-    }
+  document.querySelector(`div[data-key="${computerKey}"]`).classList.add("draw")
+  if (playerKey != computerKey - 3) {
+    let winnerName = playerWins(playerKey, computerKey) ? 'player' : 'computer'
+    ++document.querySelector(`#${winnerName}-score`).innerText
+    setWinLose(playerKey, computerKey)
+  }
 }
 
 function selectOption(object) {
-  clearState()
   playerChoices.forEach(i => i.classList.remove("selected"));
   object.classList.add("selected")
-  playerChoice = object
+  playerKey = object.dataset.key
 }
+
 playerChoices.forEach(item => item.addEventListener(
   "mousedown", e => selectOption(e.target))
 );
 
-allChoices.forEach(item => item.addEventListener("animationend", e =>
-    clearState)
-);
+function clearState(e){
+  e.target.classList.remove('win', 'draw', 'lose')
+  playerChoices.forEach(item => item.classList.add('clickable'))
+  playButton.disabled = false
+}
+
+document.querySelectorAll(".choice").forEach(
+  item => item.addEventListener(
+    "animationend", e => clearState(e))
+)
 
 playButton.addEventListener("mouseup", playRound)
