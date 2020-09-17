@@ -12,10 +12,7 @@ function chooseColor() {
 }
 
 function setColor(object) {
-  let color = selectedColor.id;
-  if (color == "multi") {
-    color = chooseColor()
-  }
+  let color = selectedColor.id == 'multi' ? chooseColor() : selectColor.id
   object.style.backgroundColor = color;
 }
 
