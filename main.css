@@ -1,4 +1,3 @@
-
 html {
   height: 100%;
   width: 100%;
@@ -7,12 +6,8 @@ html {
 }
 
 button:active {
-  /* background-color: #819ca9; */
-  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
-}
-button:focus {
-  /* background-color: #819ca9; */
-  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
+  background-color: #819ca9;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 button {
@@ -40,33 +35,3 @@ button {
 .dp8 {
 box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.20);
 }
-
-button {
-  margin: 0.3rem;
-  background-color: #f4f4f4;
-  color: inherit;
-}
-
-span {
-  font-size: 4rem;
-  text-align: right;
-  margin-bottom: 1rem;
-  padding: 0 1rem;
-}
-
-.decimal::after {
-  content: '.'
-}
-/*
-#container {
-  display: grid;
-  grid-template-areas:
-   "screen screen screen screen"
-   "equals equals dot ac"
-   "seven eight nine divide"
-    "four five six multiply"
-   "one two three minus"
-   "zero zero zero plus";
-   margin: 2rem 8rem;
-   padding: 1rem;
-} */
